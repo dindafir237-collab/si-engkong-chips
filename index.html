@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Si Engkong Chips — Kripik Singkong Manis</title>
+
+  <!-- Google Fonts: Poppins (body) + Baloo 2 (logo text) -->
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              light: "#FFECCF",
+              DEFAULT: "#FF9F1C",
+              dark: "#CC7F17"
+            }
+          },
+          fontFamily: {
+            sans: ['Poppins', 'ui-sans-serif', 'system-ui'],
+            logo: ['"Baloo 2"', 'cursive']
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Simple custom styles -->
+  <style>
+    /* soft-bright logo effect - increases saturation & brightness slightly */
+    .logo-img {
+      filter: saturate(1.12) brightness(1.04);
+    }
+
+    /* small shadow for hero product images */
+    .prod-img {
+      box-shadow: 0 12px 30px rgba(17,24,39,0.08);
+      border-radius: 12px;
+    }
+
+    /* smooth slider */
+    .slider-track {
+      transition: transform 0.7s cubic-bezier(.22,.9,.39,1);
+    }
+
+    /* ensure Baloo looks good on small screens */
+    .logo-text {
+      font-family: var(--logo-font, "Baloo 2"), cursive;
+      letter-spacing: .6px;
+    }
+  </style>
+</head>
+<body class="bg-orange-50 text-gray-900 font-sans">
+
+  <!-- ========== NAVBAR ========== -->
+  <header class="fixed w-full bg-white/90 backdrop-blur z-50 shadow-sm">
+    <div class="max-w-6xl mx-auto flex items-center justify-between px-6 py-3">
+      <!-- Logo left -->
+      <a href="#home" class="flex items-center gap-3">
+        <!-- Replace 'images/logo.png' with your uploaded logo file -->
+        <img src="logo.png" alt="Si Engkong Chips" class="w-12 h-12 object-contain rounded-full logo-img" />
+        <div class="leading-tight">
+          <div class="text-lg font-bold text-brand-dark logo-text" style="font-family: 'Baloo 2', cursive;">Si Engkong Chips</div>
+          <div class="text-xs text-gray-500 -mt-1">cemilan orang kita</div>
+        </div>
+      </a>
+
+      <!-- Nav links -->
+      <nav class="hidden md:flex items-center gap-6 text-sm font-medium">
+        <a href="#home" class="hover:text-brand-dark">Home</a>
+        <a href="#produk" class="hover:text-brand-dark">Produk</a>
+        <a href="#harga" class="hover:text-brand-dark">Harga</a>
+        <a href="#testimoni" class="hover:text-brand-dark">Testimoni</a>
+        <a href="#kontak" class="hover:text-brand-dark">Kontak</a>
+      </nav>
+
+      <!-- CTA (mobile: hidden) -->
+      <div class="hidden md:block">
+        <a href="https://wa.me/6281249899873" class="bg-brand text-white px-4 py-2 rounded-full shadow-sm hover:bg-brand-dark text-sm">Pesan Sekarang</a>
+      </div>
+
+      <!-- Mobile menu toggle -->
+      <button id="btn-mobile" class="md:hidden p-2 rounded-md">
+        <svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8h16M4 16h16"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- mobile menu -->
+  <div id="mobile-menu" class="md:hidden hidden bg-white shadow-sm">
+    <div class="px-6 py-4 space-y-2">
+      <a href="#home" class="block">Home</a>
+      <a href="#produk" class="block">Produk</a>
+      <a href="#harga" class="block">Harga</a>
+      <a href="#testimoni" class="block">Testimoni</a>
+      <a href="#kontak" class="block">Kontak</a>
+      <a href="https://wa.me/6281249899873" class="block text-green-600 font-semibold mt-2">Pesan via WA</a>
+    </div>
+  </div>
+
+  <!-- ========== HERO ========== -->
+  <main class="pt-28">
+    <section id="home" class="px-6 text-center max-w-4xl mx-auto py-16">
+      <!-- small badge / logo on hero -->
+      <div class="mx-auto max-w-xs">
+        <img src="logo.png" alt="Logo Si Engkong" class="mx-auto w-28 h-28 object-contain logo-img rounded-full" />
+      </div>
+
+      <h1 class="mt-6 text-4xl md:text-5xl font-extrabold text-brand-dark leading-tight">Kripik Singkong Manis — Renyah & Bikin Nagih</h1>
+      <p class="mt-4 text-gray-700 text-lg">Varian rasa premium: Cokelat, Original, Balado, dan Cabe Ijo. Cocok buat temen nongkrong, oleh-oleh, dan reseller.</p>
+
+      <div class="mt-6 flex justify-center gap-4">
+        <a href="#produk" class="bg-brand text-white px-6 py-3 rounded-full shadow hover:bg-brand-dark">Lihat Produk</a>
+        <a href="https://wa.me/6281249899873" class="border border-brand px-6 py-3 rounded-full text-brand hover:bg-brand-light">Chat WA</a>
+      </div>
+
+      <!-- slider (images are placeholders; replace with your images in images/ folder) -->
+      <div class="mt-10 w-full max-w-3xl mx-auto overflow-hidden rounded-2xl">
+        <div id="slider-track" class="flex slider-track">
+          <img src="cokelat.jpg" alt="Cokelat" class="w-full object-cover prod-img" />
+          <img src="original.jpg" alt="Original" class="w-full object-cover prod-img" />
+          <img src="balado.jpg" alt="Balado" class="w-full object-cover prod-img" />
+          <img src="cabe.jpg" alt="Cabe Ijo" class="w-full object-cover prod-img" />
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== PRODUK / GALLERY ========== -->
+    <section id="produk" class="px-6 py-16 bg-white">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-extrabold text-brand text-center mb-8">Varian Rasa Kami</h2>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+          <!-- CARD: Cokelat -->
+          <div class="bg-brand-light rounded-2xl p-5 text-center">
+            <img src="cokelat.jpg" alt="Cokelat" class="mx-auto w-36 h-36 object-cover rounded-xl shadow-md" />
+            <h3 class="mt-4 font-semibold text-lg">Cokelat</h3>
+            <p class="text-sm text-gray-600 mt-1">Manis legit cokelat premium, favorit semua usia.</p>
+          </div>
+
+          <!-- CARD: Original -->
+          <div class="bg-brand-light rounded-2xl p-5 text-center">
+            <img src="original.jpg" alt="Original" class="mx-auto w-36 h-36 object-cover rounded-xl shadow-md" />
+            <h3 class="mt-4 font-semibold text-lg">Original</h3>
+            <p class="text-sm text-gray-600 mt-1">Renyah klasik, manis pas—sempurna untuk cemilan.</p>
+          </div>
+
+          <!-- CARD: Balado -->
+          <div class="bg-brand-light rounded-2xl p-5 text-center">
+            <img src="balado.jpg" alt="Balado" class="mx-auto w-36 h-36 object-cover rounded-xl shadow-md" />
+            <h3 class="mt-4 font-semibold text-lg">Balado</h3>
+            <p class="text-sm text-gray-600 mt-1">Pedas manis khas, bikin nagih tiap gigitan.</p>
+          </div>
+
+          <!-- CARD: Cabe Ijo -->
+          <div class="bg-brand-light rounded-2xl p-5 text-center">
+            <img src="cabe.jpg" alt="Cabe Ijo" class="mx-auto w-36 h-36 object-cover rounded-xl shadow-md" />
+            <h3 class="mt-4 font-semibold text-lg">Cabe Ijo</h3>
+            <p class="text-sm text-gray-600 mt-1">Gurih pedas segar, favorit penikmat pedas.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== HARGA ========== -->
+    <section id="harga" class="px-6 py-16 bg-orange-100">
+      <div class="max-w-5xl mx-auto text-center">
+        <h2 class="text-3xl md:text-4xl font-extrabold text-brand mb-8">Pilihan Ukuran & Harga</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="bg-white rounded-2xl p-6 shadow">
+            <div class="text-xl font-semibold text-brand">Pouch Mini</div>
+            <div class="text-gray-600 mt-1">100 gr</div>
+            <div class="text-2xl font-extrabold text-brand-dark mt-3">Rp 8.000</div>
+          </div>
+          <div class="bg-white rounded-2xl p-6 shadow-lg border-2 border-brand">
+            <div class="text-xl font-semibold text-brand">Pouch Regular</div>
+            <div class="text-gray-600 mt-1">200 gr</div>
+            <div class="text-2xl font-extrabold text-brand-dark mt-3">Rp 15.000</div>
+          </div>
+          <div class="bg-white rounded-2xl p-6 shadow">
+            <div class="text-xl font-semibold text-brand">Pouch Jumbo</div>
+            <div class="text-gray-600 mt-1">350 gr</div>
+            <div class="text-2xl font-extrabold text-brand-dark mt-3">Rp 25.000</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== TESTIMONI ========== -->
+    <section id="testimoni" class="px-6 py-16 bg-white">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-extrabold text-brand text-center mb-8">Apa Kata Pembeli</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <blockquote class="bg-brand-light p-6 rounded-2xl text-gray-700 italic">“Enak banget, anak-anak suka!”<footer class="mt-4 font-semibold">— Rani</footer></blockquote>
+          <blockquote class="bg-brand-light p-6 rounded-2xl text-gray-700 italic">“Paket sampai rapi, rasanya mantap.”<footer class="mt-4 font-semibold">— Ibu Mira</footer></blockquote>
+          <blockquote class="bg-brand-light p-6 rounded-2xl text-gray-700 italic">“Balado nya juara, pedas manis pas!”<footer class="mt-4 font-semibold">— Aldi</footer></blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== KATALOG ========== -->
+    <section id="katalog" class="px-6 py-16 bg-orange-100 text-center">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="text-3xl font-extrabold text-brand mb-4">Katalog & Penawaran Reseller</h2>
+        <p class="text-gray-700 mb-6">Download katalog lengkap berupa PDF untuk reseller & dropshipper.</p>
+        <a href="#" class="inline-block bg-brand text-white px-6 py-3 rounded-full shadow hover:bg-brand-dark">Download Katalog (PDF)</a>
+      </div>
+    </section>
+
+    <!-- ========== KONTAK (SOCIAL + WA) ========== -->
+    <section id="kontak" class="px-6 py-16 bg-white text-center">
+      <div class="max-w-md mx-auto">
+        <h2 class="text-3xl font-extrabold text-brand mb-6">Hubungi Kami</h2>
+        <p class="text-gray-700 mb-6">Pesan cepat melalui WhatsApp atau lihat kami di Instagram & TikTok — @si_engkong</p>
+
+        <div class="space-y-3">
+          <a href="https://wa.me/6281249899873" target="_blank" class="flex items-center justify-center gap-3 bg-green-500 text-white px-6 py-3 rounded-full">
+            <!-- simple WA icon -->
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="white"><path d="M20.52 3.478A11.24 11.24 0 0012.003.75 11.23 11.23 0 002.77 8.98c0 1.98.52 3.9 1.5 5.6L2 22l7.6-2.03a10.98 10.98 0 004.4.9h.01a11.23 11.23 0 007.5-3.7 11.28 11.28 0 00-1.99-15.69z"></path></svg>
+            WhatsApp: @si_engkong
+          </a>
+
+          <a href="https://instagram.com/si_engkong" target="_blank" class="flex items-center justify-center gap-3 bg-pink-500 text-white px-6 py-3 rounded-full">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="white"><path d="M7 2h10a5 5 0 015 5v10a5 5 0 01-5 5H7a5 5 0 01-5-5V7a5 5 0 015-5zm5 6.5A4.5 4.5 0 117 13 4.5 4.5 0 0112 8.5zM18.5 6a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z"/></svg>
+            Instagram: @si_engkong
+          </a>
+
+          <a href="https://tiktok.com/@si_engkong" target="_blank" class="flex items-center justify-center gap-3 bg-black text-white px-6 py-3 rounded-full">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="white"><path d="M9 3v12.5a3.5 3.5 0 103.5-3.5V7h3a5 5 0 01-3.5-4H9z"/></svg>
+            TikTok: @si_engkong
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="bg-brand-light py-8 text-center">
+    <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-3">
+        <img src="logo.png" alt="logo" class="w-12 h-12 rounded-full logo-img" />
+        <div class="text-sm">
+          <div class="font-semibold">Si Engkong Chips</div>
+          <div class="text-xs text-gray-600">© 2025 — All Rights Reserved</div>
+        </div>
+      </div>
+
+      <div class="text-sm text-gray-700">Made with ❤️ — @si_engkong</div>
+    </div>
+  </footer>
+
+  <!-- ========== SCRIPTS ========== -->
+  <script>
+    // mobile menu toggle
+    const btn = document.getElementById('btn-mobile');
+    const menu = document.getElementById('mobile-menu');
+    btn.addEventListener('click', () => menu.classList.toggle('hidden'));
+
+    // simple slider logic (auto slide)
+    const track = document.getElementById('slider-track');
+    let idx = 0;
+    const slides = track.querySelectorAll('img').length;
+    setInterval(() => {
+      idx = (idx + 1) % slides;
+      track.style.transform = `translateX(-${idx * 100}%)`;
+    }, 3200);
+  </script>
+</body>
+</html>
