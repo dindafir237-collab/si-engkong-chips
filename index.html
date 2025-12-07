@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Si Engkong Chips – Kripik Singkong Manis Aneka Rasa</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              light: '#FFD79A',
+              DEFAULT: '#FF9F1C',
+              dark: '#CC7F17'
+            }
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-gradient-to-b from-brand-light to-orange-100 text-gray-900">
+
+  <!-- NAVBAR -->
+  <nav class="flex items-center justify-between px-6 py-4 bg-white shadow fixed w-full z-50">
+    <h1 class="text-2xl font-bold text-brand">Si Engkong Chips</h1>
+    <div class="space-x-4 hidden md:block font-medium">
+      <a href="#home" class="hover:text-brand-dark">Home</a>
+      <a href="#produk" class="hover:text-brand-dark">Produk</a>
+      <a href="#harga" class="hover:text-brand-dark">Harga</a>
+      <a href="#testimoni" class="hover:text-brand-dark">Testimoni</a>
+      <a href="#katalog" class="hover:text-brand-dark">Katalog</a>
+      <a href="#kontak" class="hover:text-brand-dark">Kontak</a>
+    </div>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <section id="home" class="pt-28 px-6 pb-20 text-center">
+    <h2 class="text-4xl md:text-6xl font-extrabold text-brand-dark">Cemilan Manis, Renyah dan Kekinian!</h2>
+    <p class="mt-4 text-lg md:text-xl text-gray-700 max-w-2xl mx-auto">Kripik singkong manis dengan rasa Cokelat, Original, Matcha, dan Tiramisu. Cocok untuk temen nongkrong, nugas, sampai cemilan jualan reseller.</p>
+
+    <button class="mt-6 bg-brand text-white px-6 py-3 rounded-full text-lg shadow hover:bg-brand-dark">Pesan Sekarang</button>
+
+    <!-- SLIDER FOTO PRODUK -->
+    <div class="mt-10 w-full max-w-xl mx-auto overflow-hidden rounded-2xl shadow-lg">
+      <div id="slider" class="flex transition-all duration-500">
+        <img src="https://i.imgur.com/dA74eBb.png" class="w-full" />
+        <img src="https://i.imgur.com/P3dV9Zy.png" class="w-full" />
+        <img src="https://i.imgur.com/eQmzUwE.png" class="w-full" />
+        <img src="https://i.imgur.com/z2c7ZsH.png" class="w-full" />
+      </div>
+    </div>
+  </section>
+
+  <script>
+    let slide = 0;
+    setInterval(() => {
+      slide = (slide + 1) % 4;
+      document.getElementById('slider').style.transform = `translateX(-${slide * 100}%)`;
+    }, 2500);
+  </script>
+
+  <!-- PRODUK -->
+  <section id="produk" class="px-6 py-16 bg-white">
+    <h3 class="text-3xl font-bold text-center text-brand mb-10">Varian Rasa Kami</h3>
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+
+      <div class="bg-brand-light rounded-2xl shadow p-4 text-center hover:scale-105 transition">
+        <img src="https://i.imgur.com/dA74eBb.png" class="w-40 mx-auto" />
+        <h4 class="font-bold mt-4 text-xl">Original</h4>
+        <p class="text-gray-700 text-sm">Manis renyah rasa klasik favorit semua.</p>
+      </div>
+
+      <div class="bg-brand-light rounded-2xl shadow p-4 text-center hover:scale-105 transition">
+        <img src="https://i.imgur.com/P3dV9Zy.png" class="w-40 mx-auto" />
+        <h4 class="font-bold mt-4 text-xl">Cokelat</h4>
+        <p class="text-gray-700 text-sm">Cokelat premium, manis legit bikin nagih.</p>
+      </div>
+
+      <div class="bg-brand-light rounded-2xl shadow p-4 text-center hover:scale-105 transition">
+        <img src="https://i.imgur.com/eQmzUwE.png" class="w-40 mx-auto" />
+        <h4 class="font-bold mt-4 text-xl">Matcha</h4>
+        <p class="text-gray-700 text-sm">Rasa Jepang, pahit manis yang elegan.</p>
+      </div>
+
+      <div class="bg-brand-light rounded-2xl shadow p-4 text-center hover:scale-105 transition">
+        <img src="https://i.imgur.com/z2c7ZsH.png" class="w-40 mx-auto" />
+        <h4 class="font-bold mt-4 text-xl">Tiramisu</h4>
+        <p class="text-gray-700 text-sm">Creamy kopi manis ala dessert premium.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- HARGA -->
+  <section id="harga" class="px-6 py-16 bg-orange-100">
+    <h3 class="text-3xl font-bold text-center text-brand mb-10">Daftar Harga</h3>
+    <div class="max-w-3xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
+
+      <div class="bg-white shadow rounded-2xl p-6 text-center">
+        <h4 class="font-bold text-xl text-brand">Pouch Mini</h4>
+        <p class="text-gray-700 mt-2">100 gram</p>
+        <p class="text-3xl font-extrabold mt-3 text-brand-dark">Rp 8.000</p>
+      </div>
+
+      <div class="bg-white shadow rounded-2xl p-6 text-center border-2 border-brand">
+        <h4 class="font-bold text-xl text-brand">Pouch Regular</h4>
+        <p class="text-gray-700 mt-2">200 gram</p>
+        <p class="text-3xl font-extrabold mt-3 text-brand-dark">Rp 15.000</p>
+      </div>
+
+      <div class="bg-white shadow rounded-2xl p-6 text-center">
+        <h4 class="font-bold text-xl text-brand">Pouch Jumbo</h4>
+        <p class="text-gray-700 mt-2">350 gram</p>
+        <p class="text-3xl font-extrabold mt-3 text-brand-dark">Rp 25.000</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- TESTIMONI -->
+  <section id="testimoni" class="px-6 py-16 bg-white">
+    <h3 class="text-3xl font-bold text-center text-brand mb-10">Apa Kata Pembeli?</h3>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+
+      <div class="bg-brand-light rounded-2xl p-6 shadow">
+        <p class="italic text-gray-700">“Matchanya enak banget, bukan asal-asalan. Manisnya pas!”</p>
+        <h4 class="font-semibold mt-4">— Rani</h4>
+      </div>
+
+      <div class="bg-brand-light rounded-2xl p-6 shadow">
+        <p class="italic text-gray-700">“Anak-anak suka banget yang cokelat. Udah langganan!”</p>
+        <h4 class="font-semibold mt-4">— Ibu Mira</h4>
+      </div>
+
+      <div class="bg-brand-light rounded-2xl p-6 shadow">
+        <p class="italic text-gray-700">“Tiramisu-nya unik banget. Baru nemu kripik begini.”</p>
+        <h4 class="font-semibold mt-4">— Aldi</h4>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- KATALOG -->
+  <section id="katalog" class="px-6 py-16 bg-orange-100">
+    <h3 class="text-3xl font-bold text-center text-brand mb-10">Katalog Produk</h3>
+    <p class="text-center text-gray-700 mb-6">Download katalog untuk reseller & dropshipper</p>
+    <div class="text-center">
+      <a href="#" class="bg-brand text-white px-6 py-3 rounded-full shadow hover:bg-brand-dark">Download Katalog PDF</a>
+    </div>
+  </section>
+
+  <!-- KONTAK -->
+  <section id="kontak" class="px-6 py-16 bg-white">
+    <h3 class="text-3xl font-bold text-center text-brand mb-10">Hubungi Kami</h3>
+    <div class="max-w-md mx-auto text-center">
+      <p class="text-gray-700 mb-4">Chat langsung untuk pemesanan atau kerjasama reseller.</p>
+      <a href="https://wa.me/66281249899873" class="bg-green-500 text-white px-6 py-3 rounded-full shadow hover:bg-green-600 text-lg">Chat WhatsApp</a>
+    </div>
+  </section>
+
+  <footer class="text-center py-6 text-gray-600 bg-brand-light">© 2025 Si Engkong Chips — Kripik Singkong Manis</footer>
+
+</body>
+</html>
